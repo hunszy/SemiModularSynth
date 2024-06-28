@@ -28,9 +28,9 @@ Takes a 10-bit digital signal, and uses SPI to communicate with an external DAC 
 ### ADC_Sampler
 Uses the FPGAs onboard ADC to poll all 6 analog input pins. 
 
-##Pictures
+## Pictures
 
-###Output of the low-pass VCF with a triangle input and changing cutoff frequency
+### Output of the low-pass VCF with a triangle input and changing cutoff frequency
 
 | High Cutoff | Medium Cutoff | Low Cutoff |
 |---------|---------|---------|
