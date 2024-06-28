@@ -1,22 +1,32 @@
 # SemiModularSynth
 
-This project is a digital, modular, patchable electronic music synthesizer designed for use on an Intel DE-10 LITE FPGA, equipped with MCP-3001 ADCs and MCP-4031 DACs.
+This project is a digital, modular, patchable electronic music synthesizer designed for use on an Intel DE-10 LITE FPGA, with supporting MCP-3001 ADCs and MCP-4031 DACs. Each module cre
 
 ![Synthesizer+Plant](Faceplate.jpg)
 
-## Features
-The synthesizer includes the following features:
-
+## Audio Signal Modules
 ### Voltage Controlled Oscillator (VCO)
-Offers rough and fine frequency controls, with the ability to toggle between square, triangle, sawtooth, and sine waves.
+Creates a sine, triangle, sawtooth, or square wave. Has rough and fine frequency controls and can toggle between wave types.
 ### Low-pass Voltage Controlled Filter (VCF)
-Allows adjustable frequency cutoff.
+Filters an input signal using a low-pass IIR filter. Cutoff frequency is set by the control signal.  
 ### Voltage Controlled Amplifier (VCA)
-Controls the volume of the signal.
+Multiplies the input signal by the control signal to adjust volume
+
+## Control Signal Modules
 ### Envelope Generator (EG)
-Utilizes ADSR controls. When used in conjunction with the VCA, emulates the sound of a piano key being struck.
+Creates a control signal, designed for use with the VCA, that emulates the volume profile of a piano key being struck. Accepts four control signals that accept the shape of the wave (ADSR), and a digital trigger that starts the envelope generation.
 ### Low Frequency Oscillator (LFO) x2
-Generates low-frequency (0.1-10 Hz) signals for controlling other modules. Togglable between square, triangle, sawtooth, and sine waves.
+Similar to the VCO, this generates a sine, triangle, sawtooth, or square wave with a low adjustable frequency (0.1-10 Hz). Used to control other modules.
+
+## Signal Conversion Modules
+### MCP3001
+Uses SPI to communicate with an external ADC to get a 10-bit digital signal. Triggers a transaction on the rising edge of the sample_clk (44.1 kHz).
+
+### MCP4911
+Takes a 10-bit digital signal, and uses SPI to communicate with an external DAC to set the output to the specified voltage. Triggers a transaction using the sample_clk (44.1 kHz).
+
+### ADC_Sampler
+Uses the FPGAs onboard ADC to poll all 6 analog input pins. 
 
 ##Pictures
 
