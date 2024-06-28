@@ -1,6 +1,9 @@
 # SemiModularSynth
 
-This project is a digital, modular, patchable electronic music synthesizer designed for use on an Intel DE-10 LITE FPGA, with supporting MCP-3001 ADCs and MCP-4031 DACs. Each module cre
+This project is a digital, modular, patchable electronic music synthesizer designed for use on an Intel DE-10 LITE FPGA, with supporting MCP-3001 ADCs and MCP-4031 DACs.
+
+Check out the YouTube demo showcasing the functionality of the VCO, VFC, and LFOs:
+https://www.youtube.com/shorts/WItJAyof4KM
 
 ![Synthesizer+Plant](Faceplate.jpg)
 
@@ -40,6 +43,3 @@ Uses the FPGAs onboard ADC to poll all 6 analog input pins.
 
 ![PCB](PCB_Wiring.jpg)
 
-## Demo
-Check out the YouTube demo showcasing the functionality of the VCO, VFC, and LFOs:
-https://www.youtube.com/shorts/WItJAyof4KM
